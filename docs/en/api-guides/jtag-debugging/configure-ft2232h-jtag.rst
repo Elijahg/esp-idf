@@ -113,9 +113,13 @@ Manually unloading the driver
     sudo kextunload -b com.FTDI.driver.FTDIUSBSerialDriver
 
    In some cases you may need to unload Apple's FTDI driver as well::
-
-    sudo kextunload -b com.apple.driver.AppleUSBFTDI
-
+    
+    •macOS < 10.15:
+        sudo kextunload -b com.apple.driver.AppleUSBFTDI
+    
+    •macOS 10.15:
+        sudo kextunload -b com.apple.DriverKit-AppleUSBFTDI
+        
 4. Run OpenOCD:
 
    .. include:: {IDF_TARGET_TOOLCHAIN_NAME}.inc
